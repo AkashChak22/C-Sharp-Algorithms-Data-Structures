@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Algorithms.DataStructures.Stack
 {
     public class Stack<T> : IEnumerable<T>
     {
         private LinkedList<T> _list = new LinkedList<T>();
+
+        // Return the number of elements in the stack
+        public int Count { get => _list.Count; }
+
+        // Check if the stack is empty
+        public bool IsEmpty { get => Count == 0; }
 
         // Create an empty stack
         public Stack() { }
@@ -17,12 +22,6 @@ namespace Algorithms.DataStructures.Stack
         {
             Push(firstElem);
         }
-
-        // Return the number of elements in the stack
-        public int Count { get => _list.Count; }
-
-        // Check if the stack is empty
-        public bool IsEmpty { get => Count == 0;}
 
         // Push an element on the stack
         public void Push(T elem)
